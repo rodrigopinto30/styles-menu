@@ -1,9 +1,12 @@
 import React, {useState} from "react";
+import { useDarkMode } from "../context/ModeContext";
 
 const StylesMenu : React.FC =()=>{
 
     const [selected, setSelected] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState(false);
+
+    const {toggleThemeMode} = useDarkMode();
 
     return(
         <div className={`fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full w-[4%] h-[7%] cursor-pointer
@@ -20,17 +23,17 @@ const StylesMenu : React.FC =()=>{
                 <ul className={`flex flex-row w-full justify-around ${isHovered ? 'block' : 'hidden'}`}>
                     <li 
                         className="bg-[#1e293b] text-white p-1 border-2 border-white rounded-md">
-                            <button onClick={()=>console.log("dark MOde")}> Dark Mode </button>
+                            <button onClick={()=>toggleThemeMode('darkMode')}> Dark Mode </button>
                         </li>
                     <li 
                         className="bg-white text-blue-400 p-1 border-2 border-blue-400 rounded-md"
                     >
-                        <button onClick={()=>console.log("Light Mode")}>Light Mode</button>    
+                        <button onClick={()=>toggleThemeMode('lightMode')}>Light Mode</button>    
                     </li>
                     <li 
                         className="bg-red-700 text-white p-1 border-2 border-green-600 rounded-md"
                     >
-                            <button onClick={()=>console.log("Navidad Mode")}> Navidad Mode </button> 
+                            <button onClick={()=>toggleThemeMode('neonMode')}> Neon Mode </button> 
                     </li>
                 </ul>
             </div>
