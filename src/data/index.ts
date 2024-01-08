@@ -83,6 +83,16 @@ export const data : Articulo[] = [
     }
 ];
 
+export const fetchArticulo = (search: string): Promise<Articulo[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const filteredData = data.filter(item =>
+        item.articulo.toLowerCase().includes(search.toLowerCase())
+      );
+      resolve(filteredData);
+    }, 1000); 
+  });
+};
 
 export const tabs :string[] = [
   "HOME",

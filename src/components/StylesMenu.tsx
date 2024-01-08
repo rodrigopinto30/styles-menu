@@ -6,9 +6,9 @@ const StylesMenu : React.FC =()=>{
     const [isHovered, setIsHovered] = useState(false);
 
     return(
-        <div className={`fixed bottom-[10%] right-[50%] bg-gray-100 rounded-full w-[4%] h-[7%] cursor-pointer
+        <div className={`fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full w-[4%] h-[7%] cursor-pointer
             border-2 border-white transition-all
-            ${isHovered ? 'hover:bg-white hover:border-red-600 hover:right-[20%] hover:w-[60%] hover:transition-all' : '' }`}
+            ${isHovered ? 'hover:bg-white hover:border-red-600 hover:right-[20%] hover:opacity-100 hover:w-[60%] hover:transition-all' : '' }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

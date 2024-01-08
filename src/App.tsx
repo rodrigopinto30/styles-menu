@@ -1,6 +1,6 @@
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Products from "./components/Products"
+import Header from "./components/Header";
+import Products from "./components/Products";
+import Recommended from "./components/Recommended";
 
 const App = () => {
   return (
@@ -8,9 +8,8 @@ const App = () => {
       <Header />
       <main className="pl-10 pr-10">
         <Products />
-        <section> 3 Recomendados</section>
+        <Recommended />
       </main>
-      <Footer />
     </div>
   )
 }
