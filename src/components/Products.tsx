@@ -29,7 +29,10 @@ const Products : React.FC =()=>{
                     type='text'
                     placeholder="Buscar articulo..."
                     className={`w-[50%] pt-2 pb-2 pl-2 rounded-md border-2 focus:outline-none
-                        ${themeMode === 'darkMode' ? 'border-gray-900 bg-slate-900 text-indigo-300' : themeMode === 'neonMode' ? 'border-purple-600 bg-[#6A1B9A]' :'border-gray-300 bg-white'}
+                        ${themeMode === 'darkMode' ? 'border-card-dark bg-card-dark text-indigo-300' 
+                            : themeMode === 'neonMode' ? 'text-white bg-black drop-shadow-noen-drop-shadow border-gray-500' 
+                                :'border-gray-300 bg-white'
+                        }
                     `}
                     value={search}
                     onChange={(e)=>setSearch(e.target.value)}
@@ -40,11 +43,11 @@ const Products : React.FC =()=>{
                     <div    
                         key={index}
                         className={`flex flex-col w-[80%] rounded-md cursor-pointer 
-                        ${themeMode === 'darkMode' ? 'shadow-lg shadow-slate-500/50 hover:bg-slate-800 hover:border-slate-100' 
-                            : themeMode === 'neonMode' ? 'hover:bg-[#8b37c0]' 
+                        ${themeMode === 'darkMode' ? 'shadow-lg text-text-dark bg-card-dark hover:bg-slate-800 hover:border-slate-100' 
+                            : themeMode === 'neonMode' ? 'text-white drop-shadow-neon-drop-shadow border border-white hover:bg-slate-900' 
                                 : 'shadow-md hover:bg-gray-100 hover:border-white'}`} 
                     >
-                        <span className="font-semibold text-center mt-3">{data.articulo}</span>
+                        <span className="text-center mt-3 underline underline-offset-2">{data.articulo}</span>
                         <div className="flex flex-row mt-4 justify-around">
                             {data.descuento > 0 &&
                                 <span className="">Descuento 
@@ -52,7 +55,7 @@ const Products : React.FC =()=>{
                                 </span>
                             }
                             {data.envioGratis &&
-                                <span className="text-green-700 font-bold"> Envio gratis </span>
+                                <span className="text-green-700 "> Envio gratis </span>
                             }
                         </div>
                         <div className="text-center mt-1 mb-3"> Precio: 

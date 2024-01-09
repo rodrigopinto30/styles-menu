@@ -9,13 +9,13 @@ const StylesMenu : React.FC =()=>{
     const {toggleThemeMode} = useDarkMode();
 
     return(
-        <div className={`fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full w-[4%] h-[7%] cursor-pointer
+        <div className={`z-10 fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full w-[4%] h-[7%] cursor-pointer
             border-2 border-white transition-all
             ${isHovered ? 'hover:bg-white hover:border-red-600 hover:right-[20%] hover:opacity-100 hover:w-[60%] hover:transition-all' : '' }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="flex flex-row w-full h-full bg-transparent rounded-full flex justify-center items-center">
+            <div className="flex flex-row w-full h-full bg-transparent rounded-full justify-center items-center">
                 <span className={`${isHovered ? 'hidden' : 'block'}`}>
                     icono
                 </span>

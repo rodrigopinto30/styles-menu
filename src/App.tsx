@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Products from "./components/Products";
 import Recommended from "./components/Recommended";
@@ -10,13 +11,14 @@ const App = () => {
   return (
       
       <div 
-          className={`${themeMode === 'darkMode' ? 'bg-slate-900' : themeMode === 'neonMode' ? 'bg-[#6A1B9A]' : 'bg-white'}`}
+          className={`${themeMode === 'darkMode' ? 'bg-background-dark' : themeMode === 'neonMode' ? 'bg-black' : 'bg-white'}`}
         >
         <Header />
         <main className="pl-10 pr-10">
           <Products />
           <Recommended />
         </main>
+        <Footer />
       </div>
       
   )

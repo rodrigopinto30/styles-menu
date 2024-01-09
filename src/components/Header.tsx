@@ -7,7 +7,7 @@ import StylesMenu from './StylesMenu';
 const Header : React.FC =()=>{
     return(
         <header className="relative flex flex-row justify-between 
-            p-2"
+            p-5"
         >
             <IconApp />
             <Navbar />

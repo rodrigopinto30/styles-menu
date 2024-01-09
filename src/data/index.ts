@@ -99,3 +99,13 @@ export const tabs :string[] = [
   "PRODUCTS",
   "ABOUT US"
 ];
+
+export const footerItems : string[] = [
+  "Términos y condiciones",
+  "Cómo cuidamos tu privacidad",
+  "Accesibilidad",
+  "Información al usuario financiero",
+  "Ayuda",
+  "Defensa del Consumidor",
+  "Información sobre seguros",
+]

@@ -8,17 +8,17 @@ const Navbar : React.FC =()=>{
 
     return(
         <nav className="flex flex-row w-[50%]">
-            <ul className="flex flex-row w-[100%]">
+            <ul className="flex flex-row w-[100%] gap-5">
                 {tabs.map((tab, index)=>(
                     <li 
                         key={index}
-                        className={`${themeMode === 'darkMode' ? 'bg-slate-900 text-white' : themeMode === 'neonMode' ? 'bg-[#6A1B9A] text-[#EA80FC]' : 'bg-white text-black' }`}
                     >
                         <a 
                             href="/"
-                            className={`p-1 transition-all hover:bg-gray-100 
-                                hover:underline hover:underline-offset-4
-                                `}
+
+                        className={`transition-all ${themeMode === 'darkMode' ? 'text-text-dark hover:underline hover:underline-offset-4' 
+                        : themeMode === 'neonMode' ? 'text-white drop-shadow-neon-drop-shadow  hover:underline hover:underline-offset-4' 
+                            : 'bg-white text-black hover:underline hover:underline-offset-4' }`}
                             > 
                             {tab}
                         </a> 

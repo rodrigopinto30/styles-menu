@@ -9,14 +9,28 @@ export default {
       colors: {
         "dark-purple": "#081A51",
         "light-white": "rgba(255,255,255,0.17)",
+        "background-dark" : "#292829",
+        "card-dark" : "#1e1e1e",
+        "text-dark" : "#929292",
       },
       boxShadow: {
         'neon': '0 0 5px #6A1B9A, 0 0 25px #6A1B9A, 0 0 50px #6A1B9A, 0 0 100px',
-        //'dark': '0px 1px 7px -2px #6A1B9A',
-        'dark': '0 0 5px #6A1B9A, 0 0 25px #6A1B9A, 0 0 50px #6A1B9A, 0 0 100px'
-      }
+      },
+      dropShadow: {
+          'neon-drop-shadow': [
+            '0 0 0px #fff', 
+            '0 0 0px #fff', 
+            '0 0 0px #fff', 
+            '0 0 0px #0fa', 
+            '0 0 0px #0fa', 
+            '0 0 0px #0fa', 
+            '0 0 0px #0fa', 
+            '0 0 1px #0fa'
+          ]
+        }
+      
+
     },
   },
   plugins: [],
 }
-
