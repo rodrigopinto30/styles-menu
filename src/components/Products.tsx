@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {data, fetchArticulo} from '../data';
 import { Articulo } from "../type";
+import { useDarkMode } from "../context/ModeContext";
 
 const Products : React.FC =()=>{
 
@@ -9,6 +10,8 @@ const Products : React.FC =()=>{
     const [search, setSearch] = useState<string>("");
     
     const [articulos, setArticulos] = useState<Articulo[]>([]);
+
+    const {themeMode} = useDarkMode();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +28,9 @@ const Products : React.FC =()=>{
                 <input 
                     type='text'
                     placeholder="Buscar articulo..."
-                    className="w-[50%] pt-2 pb-2 pl-2 border-2 border-gray-300 rounded-md focus:outline-none"
+                    className={`w-[50%] pt-2 pb-2 pl-2 rounded-md border-2 focus:outline-none
+                        ${themeMode === 'darkMode' ? 'border-gray-900 bg-slate-900 text-indigo-300' : themeMode === 'neonMode' ? 'border-purple-600 bg-[#6A1B9A]' :'border-gray-300 bg-white'}
+                    `}
                     value={search}
                     onChange={(e)=>setSearch(e.target.value)}
                 />
@@ -34,8 +39,10 @@ const Products : React.FC =()=>{
                 {articulos.map((data, index) =>(
                     <div    
                         key={index}
-                        className="flex flex-col w-[80%] border-2 border-gray-300 rounded-md cursor-pointer 
-                        hover:bg-gray-100 hover:border-white" 
+                        className={`flex flex-col w-[80%] rounded-md cursor-pointer 
+                        ${themeMode === 'darkMode' ? 'shadow-lg shadow-slate-500/50 hover:bg-slate-800 hover:border-slate-100' 
+                            : themeMode === 'neonMode' ? 'hover:bg-[#8b37c0]' 
+                                : 'shadow-md hover:bg-gray-100 hover:border-white'}`} 
                     >
                         <span className="font-semibold text-center mt-3">{data.articulo}</span>
                         <div className="flex flex-row mt-4 justify-around">

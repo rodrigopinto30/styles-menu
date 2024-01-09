@@ -23,17 +23,21 @@ const StylesMenu : React.FC =()=>{
                 <ul className={`flex flex-row w-full justify-around ${isHovered ? 'block' : 'hidden'}`}>
                     <li 
                         className="bg-[#1e293b] text-white p-1 border-2 border-white rounded-md">
-                            <button onClick={()=>toggleThemeMode('darkMode')}> Dark Mode </button>
+                            <button type="button" onClick={()=>toggleThemeMode('darkMode')}>
+                             Dark Mode </button>
                         </li>
                     <li 
                         className="bg-white text-blue-400 p-1 border-2 border-blue-400 rounded-md"
                     >
-                        <button onClick={()=>toggleThemeMode('lightMode')}>Light Mode</button>    
+                        <button type="button" onClick={()=>toggleThemeMode('lightMode')}
+                        >Light Mode</button>    
                     </li>
                     <li 
                         className="bg-red-700 text-white p-1 border-2 border-green-600 rounded-md"
                     >
-                            <button onClick={()=>toggleThemeMode('neonMode')}> Neon Mode </button> 
+                        <button type="button" 
+                            onClick={()=>toggleThemeMode('neonMode')}
+                        > Neon Mode </button> 
                     </li>
                 </ul>
             </div>

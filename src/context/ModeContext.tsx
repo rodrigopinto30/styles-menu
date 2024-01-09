@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
+
 type ThemeMode = 'lightMode' | 'darkMode' | 'neonMode';
 
 interface DarkModeContextProps {
@@ -8,6 +9,7 @@ interface DarkModeContextProps {
 }
 
 const DarkModeContext = createContext<DarkModeContextProps | undefined>(undefined);
+
 
 interface DarKModeProviderProps {
     children: ReactNode;

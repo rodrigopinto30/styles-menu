@@ -12,13 +12,13 @@ const Navbar : React.FC =()=>{
                 {tabs.map((tab, index)=>(
                     <li 
                         key={index}
-                        className={`bg-${themeMode === 'darkMode' ? 'gray-300': themeMode === 'neonMode' ? 'red-900' : 'white'} pl-3`}
+                        className={`${themeMode === 'darkMode' ? 'bg-slate-900 text-white' : themeMode === 'neonMode' ? 'bg-[#6A1B9A] text-[#EA80FC]' : 'bg-white text-black' }`}
                     >
-
                         <a 
                             href="/"
                             className={`p-1 transition-all hover:bg-gray-100 
-                                hover:underline hover:underline-offset-4`}
+                                hover:underline hover:underline-offset-4
+                                `}
                             > 
                             {tab}
                         </a> 
