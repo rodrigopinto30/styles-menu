@@ -14,7 +14,7 @@ const App = () => {
           className={`${themeMode === 'darkMode' ? 'bg-background-dark' : themeMode === 'neonMode' ? 'bg-black' : 'bg-white'}`}
         >
         <Header />
-        <main className="pl-10 pr-10">
+        <main className="h-fit pl-10 pr-10">
           <Products />
           <Recommended />
         </main>

@@ -38,7 +38,7 @@ const Products : React.FC =()=>{
                     onChange={(e)=>setSearch(e.target.value)}
                 />
             </div>
-            <div className="w-[100%] grid grid-cols-3 gap-4">
+            <div className="w-[100%] grid xl:grid-cols-3 xl:gap-4 grid-cols-2 gap-1 gap-y-8">
                 {articulos.map((data, index) =>(
                     <div    
                         key={index}

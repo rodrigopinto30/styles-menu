@@ -6,16 +6,21 @@ const StylesMenu : React.FC =()=>{
     const [selected, setSelected] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState(false);
 
-    const {toggleThemeMode} = useDarkMode();
+    const {themeMode, toggleThemeMode} = useDarkMode();
 
     return(
-        <div className={`z-10 fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full w-[4%] h-[7%] cursor-pointer
+        <div className={`z-10 fixed bottom-[10%] right-[50%] bg-gray-100 opacity-75 rounded-full xl:w-[4%] lg:w-[7%] md:w-[9%] w-[12%] h-[7%] cursor-pointer
             border-2 border-white transition-all
-            ${isHovered ? 'hover:bg-white hover:border-red-600 hover:right-[20%] hover:opacity-100 hover:w-[60%] hover:transition-all' : '' }`}
+            ${isHovered ? 'hover:bg-white hover:border-red-100 hover:xl:right-[20%] hover:opacity-100 hover:xl:w-[60%] hover:w-[80%] hover:right-[12%] hover:transition-all' : '' }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="flex flex-row w-full h-full bg-transparent rounded-full justify-center items-center">
+            <div className={`flex flex-row w-full h-full bg-transparent rounded-full 
+                justify-center items-center ${themeMode === 'darkMode' ? 'bg-slate-500' 
+                    : themeMode === 'neonMode' ? "bg-slate-800"
+                        : 'bg-gray-100 '}`
+                }
+            >
                 <span className={`${isHovered ? 'hidden' : 'block'}`}>
                     icono
                 </span>
@@ -33,7 +38,7 @@ const StylesMenu : React.FC =()=>{
                         >Light Mode</button>    
                     </li>
                     <li 
-                        className="bg-red-700 text-white p-1 border-2 border-green-600 rounded-md"
+                        className="drop-shadow-neon-drop-shadow text-slate-900 p-1 border-2 border-green-600 rounded-md"
                     >
                         <button type="button" 
                             onClick={()=>toggleThemeMode('neonMode')}
